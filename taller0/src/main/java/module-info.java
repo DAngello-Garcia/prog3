@@ -1,6 +1,7 @@
 module co.edu.uniquindio.ingesis.p3.taller0 {
     requires javafx.controls;
     requires javafx.fxml;
+    requires lombok;
 
 
     opens co.edu.uniquindio.ingesis.p3.taller0 to javafx.fxml;
