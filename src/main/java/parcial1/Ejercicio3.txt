@@ -1,0 +1,19 @@
+
+Sin excepciones:
+    1 -> 2 -> 3 -> 4 -> 11 -> 12
+Execpción en el bloque 2:
+    1 -> 2* -> 11
+Excepción en el bloque 5:
+    1 -> 2 -> 3 -> 4* -> 5* -> 9 -> 11
+Error por formato inválido en una operación de casteo de una cadena a un número en el bloque 3:
+    1 -> 2 -> 3* -> 5 -> 6 -> 7 -> 9 -> 10 -> 11 -> 12
+Excepción de acceso a un objeto null en el bloque 15:
+    1 -> 2 -> 3 -> 4* -> 15* -> 11
+Excepción de usuario no válido:
+    1 -> 2 -> 3 -> 4* -> 5 -> 6 -> 7 -> 9 -> 10 -> 11 -> 12
+Excepción de tipo EnteroException en el bloque 5:
+    1 -> 2 -> 3 -> 4* -> 5* -> 9 -> 11
+Excepción de tipo null en el bloque 6:
+    1 -> 2 -> 3 -> 4* -> 5 -> 6* -> 8 -> 9 -> 10 -> 11 -> 12
+Excepción de tipo ClienteException en el bloque 12:
+    1 -> 2 -> 3 -> 4 -> 11 -> 12*

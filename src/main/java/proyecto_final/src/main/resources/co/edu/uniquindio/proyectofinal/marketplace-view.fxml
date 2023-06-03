@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0"
+            prefWidth="960.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.proyectofinal.controllers.MarketPlaceViewController">
+    <children>
+        <TabPane prefHeight="760.0" prefWidth="960.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="20.0"
+                 AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="MarketPlace">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Button layoutX="484.0" layoutY="37.0" mnemonicParsing="false" onAction="#login"
+                                        text="Login"/>
+                                <Text layoutX="561.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Si no es administrador, por favor  diríjase a su correspondiente pestaña"
+                                      wrappingWidth="183.99060821533203"/>
+                                <Text layoutX="22.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="Inicie sesión como administrador" wrappingWidth="130.421875"/>
+                                <TabPane layoutX="15.0" layoutY="83.0" prefHeight="553.0" prefWidth="934.0"
+                                         tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab text="Reportes">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                                            prefWidth="200.0">
+                                                    <children>
+                                                        <Label layoutX="51.0" layoutY="17.0"
+                                                               text="Cantidad de mensajes enviados  entre"/>
+                                                        <Label layoutX="52.0" layoutY="231.0"
+                                                               text="Cantidad de productos publicados entre"/>
+                                                        <DatePicker fx:id="dateProductosPublicadosAntes" layoutX="51.0"
+                                                                    layoutY="256.0" prefHeight="25.0"
+                                                                    prefWidth="145.0"/>
+                                                        <TableView fx:id="tblCantProductosPublicados" layoutX="52.0"
+                                                                   layoutY="289.0" prefHeight="157.0" prefWidth="355.0">
+                                                            <columns>
+                                                                <TableColumn prefWidth="59.0" text="Cantidad"/>
+                                                                <TableColumn prefWidth="85.0" text="Producto"/>
+                                                                <TableColumn prefWidth="81.0" text="Vendedor"/>
+                                                                <TableColumn prefWidth="129.0"
+                                                                             text="Fecha de publicación"/>
+                                                            </columns>
+                                                        </TableView>
+                                                        <TableView fx:id="tblCantMensajesEnviados" layoutX="52.0"
+                                                                   layoutY="80.0" prefHeight="136.0" prefWidth="227.0">
+                                                            <columns>
+                                                                <TableColumn prefWidth="59.0" text="Cantidad"/>
+                                                                <TableColumn prefWidth="85.0" text="Vendedor 1"/>
+                                                                <TableColumn prefWidth="81.0" text="Vendedor 2"/>
+                                                            </columns>
+                                                        </TableView>
+                                                        <Label layoutX="226.0" layoutY="260.0" text="y"/>
+                                                        <DatePicker fx:id="dateProductosPublicadosDespues"
+                                                                    layoutX="261.0" layoutY="256.0" prefHeight="25.0"
+                                                                    prefWidth="145.0"/>
+                                                        <ComboBox fx:id="cbVendedor1" layoutX="51.0" layoutY="46.0"
+                                                                  prefWidth="150.0"/>
+                                                        <ComboBox fx:id="cbVendedor2" layoutX="258.0" layoutY="46.0"
+                                                                  prefWidth="150.0"/>
+                                                        <Label layoutX="229.0" layoutY="50.0" text="y"/>
+                                                        <Label layoutX="503.0" layoutY="17.0"
+                                                               text="Cantidad de productos publicados por"/>
+                                                        <TableView fx:id="tblCantProductosPublicadosVendedor"
+                                                                   layoutX="504.0" layoutY="80.0" prefHeight="94.0"
+                                                                   prefWidth="146.0">
+                                                            <columns>
+                                                                <TableColumn prefWidth="67.0" text="Cantidad"/>
+                                                                <TableColumn prefWidth="77.0" text="Vendedor"/>
+                                                            </columns>
+                                                        </TableView>
+                                                        <ComboBox fx:id="cbVendedorPublicados" layoutX="503.0"
+                                                                  layoutY="46.0" prefWidth="150.0"/>
+                                                        <Label layoutX="503.0" layoutY="186.0"
+                                                               text="Cantidad de contactos por vendedor"/>
+                                                        <TableView fx:id="tblCantidadContactos" layoutX="504.0"
+                                                                   layoutY="215.0" prefHeight="87.0" prefWidth="146.0">
+                                                            <columns>
+                                                                <TableColumn prefWidth="67.0" text="Cantidad"/>
+                                                                <TableColumn prefWidth="77.0" text="Vendedor"/>
+                                                            </columns>
+                                                        </TableView>
+                                                        <Label layoutX="503.0" layoutY="324.0"
+                                                               text="Top 10 productos con más likes"/>
+                                                        <TableView fx:id="tblLikes" layoutX="504.0" layoutY="353.0"
+                                                                   prefHeight="93.0" prefWidth="218.0">
+                                                            <columns>
+                                                                <TableColumn prefWidth="56.0" text="Cantidad"/>
+                                                                <TableColumn text="Producto"/>
+                                                                <TableColumn prefWidth="81.0" text="Vendedor"/>
+                                                            </columns>
+                                                        </TableView>
+                                                        <Button layoutX="402.0" layoutY="459.0" mnemonicParsing="false"
+                                                                text="Generar reportes"/>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Gestión de vendedores">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                                            prefWidth="200.0">
+                                                    <children>
+                                                        <GridPane layoutX="39.0" layoutY="69.0" prefHeight="250.0"
+                                                                  prefWidth="340.0">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                                   prefWidth="100.0"/>
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+                                                                                   prefWidth="100.0"/>
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0"
+                                                                                vgrow="SOMETIMES"/>
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <Label text="Nombre:"/>
+                                                                <Label text="Apellido:" GridPane.rowIndex="1"/>
+                                                                <Label GridPane.rowIndex="2"/>
+                                                                <Label text="Dirección:" GridPane.rowIndex="3"/>
+                                                                <Label text="Usuario:" GridPane.rowIndex="4"/>
+                                                                <Label text="Contraseña: " GridPane.rowIndex="5"/>
+                                                                <Label text="Cedula:" GridPane.rowIndex="2"/>
+                                                                <TextField fx:id="txtNombreVendedor"
+                                                                           GridPane.columnIndex="1"/>
+                                                                <TextField fx:id="txtApellidoVendedor"
+                                                                           GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="1"/>
+                                                                <TextField fx:id="txtCedulaVendedor"
+                                                                           GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="2"/>
+                                                                <TextField fx:id="txtDireccionVendedor"
+                                                                           GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="3"/>
+                                                                <TextField fx:id="txtUsuarioVendedor"
+                                                                           GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="4"/>
+                                                                <TextField fx:id="txtContraseñaVendedor"
+                                                                           prefWidth="176.0" GridPane.columnIndex="1"
+                                                                           GridPane.rowIndex="5"/>
+                                                            </children>
+                                                        </GridPane>
+                                                        <Button layoutX="275.0" layoutY="345.0" mnemonicParsing="false"
+                                                                onAction="#onCrearVendedorClick" prefHeight="25.0"
+                                                                prefWidth="62.0" text="Crear"/>
+                                                        <Label layoutX="47.0" layoutY="27.0" prefHeight="23.0"
+                                                               prefWidth="104.0" text="Crear Vendedores"/>
+                                                        <Label layoutX="522.0" layoutY="30.0"
+                                                               text="Lista de vendedores"/>
+                                                        <Button layoutX="223.0" layoutY="345.0" mnemonicParsing="false"
+                                                                onAction="#onEliminarVendedorClick" text="Eliminar"/>
+                                                        <Button layoutX="337.0" layoutY="345.0" mnemonicParsing="false"
+                                                                onAction="#onEditarVendedorClick" text="Editar"/>
+                                                        <TableView fx:id="tableListaVendedores" layoutX="441.0"
+                                                                   layoutY="74.0" prefHeight="238.0" prefWidth="286.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="colListaVendedoresNombre"
+                                                                             prefWidth="100.0" text="Nombre"/>
+                                                                <TableColumn fx:id="colListaVendedoresApellido"
+                                                                             prefWidth="88.0" text="Apellido "/>
+                                                                <TableColumn fx:id="colListaVendedoresCedula"
+                                                                             prefWidth="97.0" text="Cedula"/>
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                                <Pane fx:id="paneBloqueo" layoutX="6.0" layoutY="84.0" prefHeight="534.0"
+                                      prefWidth="948.0" style="-fx-background-color: white;"/>
+                                <GridPane layoutX="166.0" layoutY="17.0" prefHeight="50.0" prefWidth="278.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                    </rowConstraints>
+                                    <children>
+                                        <TextField fx:id="tfUser" GridPane.columnIndex="1"/>
+                                        <Label text="Usuario:"/>
+                                        <Label text="Contraseña:" GridPane.rowIndex="1"/>
+                                        <PasswordField fx:id="pfPass" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Vendedor 1">
+                    <content>
+                        <fx:include source="vendedor1.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Vendedor 2">
+                    <content>
+                        <fx:include source="vendedor2.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Vendedor 3">
+                    <content>
+                        <fx:include source="vendedor3.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Vendedor 4">
+                    <content>
+                        <fx:include source="vendedor4.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Vendedor 5">
+                    <content>
+                        <fx:include source="vendedor5.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Vendedor 6">
+                    <content>
+                        <fx:include source="vendedor6.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Vendedor 7">
+                    <content>
+                        <fx:include source="vendedor7.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Vendedor 8">
+                    <content>
+                        <fx:include source="vendedor8.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Vendedor 9">
+                    <content>
+                        <fx:include source="vendedor9.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Vendedor 10">
+                    <content>
+                        <fx:include source="vendedor10.fxml"/>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
